@@ -1,0 +1,66 @@
+# Account details
+aws_profile = "heritage-development-eu-west-2"
+aws_region  = "eu-west-2"
+aws_account = "heritage-development"
+
+# Account shorthand
+account = "hdev"
+region  = "euw2"
+
+# Application details
+application = "metrics"
+environment = "development"
+
+# Frontend ASG settings
+web_instance_size = "t3.medium"
+web_asg_min_size = 1
+web_asg_max_size = 1
+web_asg_desired_capacity = 1
+
+internal_lb_allow_cidr_blocks = [
+  "10.0.0.0/8"
+]
+
+external_lb_allow_cidr_blocks = [
+  "82.199.87.128/26",
+  "82.199.90.136/29",
+  "82.199.90.160/27",
+  "91.212.42.0/24"
+]
+
+web_cw_logs = {
+  "messages" = {
+    file_path = "/var/log"
+    log_group_retention = 7
+  }
+  
+  "secure" = {
+    file_path = "/var/log"
+    log_group_retention = 7
+  }
+
+  "yum.log" = {
+    file_path = "/var/log"
+    log_group_retention = 7
+  }
+
+  "errors.log" = {
+    file_path = "/var/log/amazon/ssm"
+    log_group_retention = 7
+  }
+
+  "amazon-ssm-agent.log" = {
+    file_path = "/var/log/amazon/ssm"
+    log_group_retention = 7
+  }
+  "httpd.log" = {
+    file_path = "/var/log/"
+    log_group_retention = 7
+  }
+}
+
+scheduled_stop_recurrence = "00 20 * * 1-5"
+scheduled_start_recurrence = "00 06 * * 1-5"
+
+allowed_external_metrics_paths_http = []
+allowed_external_metrics_paths_https = []

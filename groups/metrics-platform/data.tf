@@ -72,7 +72,7 @@ data "aws_ami" "metrics" {
   filter {
     name = "name"
     values = [
-      var.ami_name_filter,
+      var.metrics_ami_name_filter,
     ]
   }
 

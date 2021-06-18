@@ -97,12 +97,12 @@ variable "default_log_group_retention_in_days" {
   description = "Total days to retain logs in CloudWatch log group if not specified for specific logs"
 }
 
-variable "release_version" {
+variable "metrics_app_release_version" {
   type        = string
   description = "Version of the application to download for deployment to web server(s)"
 }
 
-variable "ami_name_filter" {
+variable "metrics_ami_name_filter" {
   type        = string
   default     = "metrics-platform-*"
   description = "Name of the AMI to use in the Auto Scaling configuration for metrics web server(s)"

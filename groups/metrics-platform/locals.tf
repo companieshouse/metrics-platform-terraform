@@ -29,7 +29,7 @@ locals {
     s3_bucket_releases = local.s3_releases["release_bucket_name"]
     s3_bucket_configs  = local.s3_releases["config_bucket_name"]
     environment        = var.environment
-    version            = var.release_version
+    version            = var.metrics_app_release_version
     region             = var.aws_region
     cw_log_files       = local.cw_logs
     cw_agent_user      = "root"

@@ -87,7 +87,7 @@ variable "web_service_protocol" {
 
 variable "web_health_check_path" {
   type        = string
-  default     = "/"
+  default     = "/dashboard/"
   description = "Target group health check path"
 }
 

@@ -1,21 +1,21 @@
 # Account details
-aws_profile = "heritage-development-eu-west-2"
+aws_profile = "heritage-live-eu-west-2"
 aws_region  = "eu-west-2"
-aws_account = "heritage-development"
+aws_account = "heritage-live"
 
 # Account shorthand
-account = "hdev"
+account = "hlive"
 region  = "euw2"
 
 # Application details
 application = "metrics"
-environment = "development"
+environment = "live"
 
 # Frontend ASG settings
 web_instance_size = "t3.medium"
-web_asg_min_size = 1
-web_asg_max_size = 1
-web_asg_desired_capacity = 1
+web_asg_min_size = 3
+web_asg_max_size = 3
+web_asg_desired_capacity = 3
 
 internal_lb_allow_cidr_blocks = [
   "10.0.0.0/8"

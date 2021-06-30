@@ -36,50 +36,6 @@ module "external_alb" {
     enabled = true
   }
 
-  #####
-  #  https listner rules not supported by module, disabling for now
-  #####
-  # http_tcp_listeners = [
-  #   {
-  #     port               = 80
-  #     protocol           = "HTTP"
-  #     target_group_index = 0
-  #     action_type        = "redirect"
-  #     redirect = {
-  #       port        = "443"
-  #       protocol    = "HTTPS"
-  #       status_code = "HTTP_301"
-  #     }
-  #   },
-  # ]
-  # http_listener_rules = join( length(var.allowed_external_metrics_paths_http) >=1 ? [
-  #   {
-  #     # Allow specified paths to be forwarded to the target group
-  #     https_listener_index = 0
-  #     priority = 100
-  #     actions = {
-  #       type               = "forward"
-  #       target_group_index = 0
-  #     }
-  #     conditions = [{
-  #       path_patterns = var.allowed_external_metrics_paths_http
-  #     }]
-  #   }] : [],
-  #   [{
-  #     # Low priority default block, takes priority over default allow
-  #     https_listener_index = 0
-  #     priority = 1000
-  #     actions = [{
-  #       type         = "fixed-response"
-  #       content_type = "text/plain"
-  #       status_code  = 404
-  #     }]
-  #     conditions = [{
-  #       path_patterns = "*"
-  #     }]
-  #   }]
-  # )
-
   https_listeners = [
     {
       port               = 443

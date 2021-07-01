@@ -1,15 +1,15 @@
 # Account details
-aws_profile = "heritage-staging-eu-west-2"
+aws_profile = "heritage-live-eu-west-2"
 aws_region  = "eu-west-2"
-aws_account = "heritage-staging"
+aws_account = "heritage-live"
 
 # Account shorthand
-account = "hstg"
+account = "hlive"
 region  = "euw2"
 
 # Application details
 application = "metrics"
-environment = "staging"
+environment = "live"
 
 # Frontend ASG settings
 web_instance_size = "t3.medium"

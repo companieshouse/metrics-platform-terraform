@@ -10,7 +10,7 @@ module "external_alb_security_group" {
   vpc_id      = data.aws_vpc.vpc.id
 
   ingress_cidr_blocks = var.external_lb_allow_cidr_blocks
-  ingress_rules       = ["http-80-tcp", "https-443-tcp"]
+  ingress_rules       = length(var.external_lb_allow_cidr_blocks) >= 1 ? ["http-80-tcp", "https-443-tcp"] : []
   egress_rules        = ["all-all"]
 }
 

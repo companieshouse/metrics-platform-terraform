@@ -1,0 +1,65 @@
+# Account details
+aws_profile = "heritage-live-eu-west-2"
+aws_region  = "eu-west-2"
+aws_account = "heritage-live"
+
+# Account shorthand
+account = "hlive"
+region  = "euw2"
+
+# Application details
+application = "metrics"
+environment = "live"
+
+# Frontend ASG settings
+web_instance_size = "t3.medium"
+web_asg_min_size = 3
+web_asg_max_size = 3
+web_asg_desired_capacity = 3
+
+internal_lb_allow_cidr_blocks = [
+  "10.0.0.0/8"
+]
+
+external_lb_allow_cidr_blocks = [
+]
+
+web_cw_logs = {
+  "messages" = {
+    file_path = "/var/log"
+    log_group_retention = 7
+  }
+  
+  "secure" = {
+    file_path = "/var/log"
+    log_group_retention = 7
+  }
+
+  "yum.log" = {
+    file_path = "/var/log"
+    log_group_retention = 7
+  }
+
+  "errors.log" = {
+    file_path = "/var/log/amazon/ssm"
+    log_group_retention = 7
+  }
+
+  "amazon-ssm-agent.log" = {
+    file_path = "/var/log/amazon/ssm"
+    log_group_retention = 7
+  }
+  "access_log" = {
+    file_path = "/var/log/httpd/"
+    log_group_retention = 7
+  }
+  "error_log" = {
+    file_path = "/var/log/httpd/"
+    log_group_retention = 7
+  }
+}
+
+scheduled_stop_recurrence = "00 20 * * 1-5"
+scheduled_start_recurrence = "00 06 * * 1-5"
+
+allowed_external_metrics_paths_https = []

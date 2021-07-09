@@ -97,6 +97,12 @@ variable "default_log_group_retention_in_days" {
   description = "Total days to retain logs in CloudWatch log group if not specified for specific logs"
 }
 
+variable "metrics_app_artifact_name" {
+  type        = string
+  description = "Name of the application artifact to download for deployment to web server(s)"
+  default     = "performance-analysis"
+}
+
 variable "metrics_app_release_version" {
   type        = string
   description = "Version of the application to download for deployment to web server(s)"

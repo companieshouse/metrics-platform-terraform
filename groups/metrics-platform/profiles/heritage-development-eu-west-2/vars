@@ -8,7 +8,7 @@ account = "hdev"
 region  = "euw2"
 
 # Application details
-application = "metrics"
+application = "performance-analysis"
 environment = "development"
 
 # Frontend ASG settings
@@ -49,12 +49,14 @@ web_cw_logs = {
     file_path = "/var/log/amazon/ssm"
     log_group_retention = 7
   }
+
   "access_log" = {
-    file_path = "/var/log/httpd/"
+    file_path = "/var/log/httpd"
     log_group_retention = 7
   }
+
   "error_log" = {
-    file_path = "/var/log/httpd/"
+    file_path = "/var/log/httpd"
     log_group_retention = 7
   }
 }

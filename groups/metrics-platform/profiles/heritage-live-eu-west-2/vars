@@ -8,7 +8,7 @@ account = "hlive"
 region  = "euw2"
 
 # Application details
-application = "metrics"
+application = "performance-analysis"
 environment = "live"
 
 # Frontend ASG settings
@@ -27,35 +27,35 @@ external_lb_allow_cidr_blocks = [
 web_cw_logs = {
   "messages" = {
     file_path = "/var/log"
-    log_group_retention = 7
+    log_group_retention = 180
   }
   
   "secure" = {
     file_path = "/var/log"
-    log_group_retention = 7
+    log_group_retention = 180
   }
 
   "yum.log" = {
     file_path = "/var/log"
-    log_group_retention = 7
+    log_group_retention = 180
   }
 
   "errors.log" = {
     file_path = "/var/log/amazon/ssm"
-    log_group_retention = 7
+    log_group_retention = 180
   }
 
   "amazon-ssm-agent.log" = {
     file_path = "/var/log/amazon/ssm"
-    log_group_retention = 7
+    log_group_retention = 180
   }
   "access_log" = {
-    file_path = "/var/log/httpd/"
-    log_group_retention = 7
+    file_path = "/var/log/httpd"
+    log_group_retention = 180
   }
   "error_log" = {
-    file_path = "/var/log/httpd/"
-    log_group_retention = 7
+    file_path = "/var/log/httpd"
+    log_group_retention = 180
   }
 }
 

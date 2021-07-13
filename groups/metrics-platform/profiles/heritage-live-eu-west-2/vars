@@ -8,7 +8,7 @@ account = "hlive"
 region  = "euw2"
 
 # Application details
-application = "performance-analysis"
+application = "metrics"
 environment = "live"
 
 # Frontend ASG settings

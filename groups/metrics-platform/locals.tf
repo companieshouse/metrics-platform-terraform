@@ -23,7 +23,7 @@ locals {
   cw_logs    = { for log, map in var.web_cw_logs : log => merge(map, { "log_group_name" = "${var.application}-web-${log}" }) }
   log_groups = compact([for log, map in local.cw_logs : lookup(map, "log_group_name", "")])
 
-  ro_s3_bucket_names = flatten(concat(var.ro_s3_bucket_names, [local.s3_releases["release_bucket_name"], local.s3_releases["config_bucket_name"]]))
+  ro_s3_bucket_names = flatten(concat(var.ro_s3_bucket_names, [local.s3_releases["release_bucket_name"], local.s3_releases["config_bucket_name"], local.s3_releases["resources_bucket_name"]]))
 
   web_ansible_inputs = {
     s3_bucket_releases         = local.s3_releases["release_bucket_name"]

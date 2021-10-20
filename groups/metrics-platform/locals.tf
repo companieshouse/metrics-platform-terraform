@@ -26,14 +26,16 @@ locals {
   ro_s3_bucket_names = flatten(concat(var.ro_s3_bucket_names, [local.s3_releases["release_bucket_name"], local.s3_releases["config_bucket_name"]]))
 
   web_ansible_inputs = {
-    s3_bucket_releases = local.s3_releases["release_bucket_name"]
-    s3_bucket_configs  = local.s3_releases["config_bucket_name"]
-    environment        = var.environment
-    artifact_name      = var.metrics_app_artifact_name
-    version            = var.metrics_app_release_version
-    region             = var.aws_region
-    cw_log_files       = local.cw_logs
-    cw_agent_user      = "root"
+    s3_bucket_releases         = local.s3_releases["release_bucket_name"]
+    s3_bucket_configs          = local.s3_releases["config_bucket_name"]
+    environment                = var.environment
+    artifact_name              = var.metrics_app_artifact_name
+    version                    = var.metrics_app_release_version
+    region                     = var.aws_region
+    cw_log_files               = local.cw_logs
+    cw_agent_user              = "root"
+    s3_json_data_source_bucket = local.s3_releases["resources_bucket_name"]
+    s3_json_data_source_path   = "/performance-analytics/dashboard/json/"
   }
 
   default_tags = {

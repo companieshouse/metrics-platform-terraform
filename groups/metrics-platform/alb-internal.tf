@@ -17,6 +17,18 @@ module "internal_alb_security_group" {
 #--------------------------------------------
 # Internal ALB
 #--------------------------------------------
+resource "aws_route53_record" "internal_alb" {
+  zone_id = data.aws_route53_zone.private_zone.zone_id
+  name    = "performance-analytics"
+  type    = "A"
+
+  alias {
+    name                   = module.internal_alb.lb_dns_name
+    zone_id                = module.internal_alb.lb_zone_id
+    evaluate_target_health = true
+  }
+}
+
 module "internal_alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "~> 6.2"

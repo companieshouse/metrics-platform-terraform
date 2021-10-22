@@ -21,3 +21,7 @@ output "internal_lb_zone_id" {
 output "internal_lb_id" {
   value = module.internal_alb.lb_id
 }
+
+output "internal_alb_dns" {
+  value = aws_route53_record.internal_alb.fqdn
+}

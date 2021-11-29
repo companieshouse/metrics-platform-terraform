@@ -68,6 +68,14 @@ web_cw_logs = {
 scheduled_stop_recurrence = "00 20 * * 1-5"
 scheduled_start_recurrence = "00 06 * * 1-5"
 
+
+# Rule limits for condition values, wildcards, and total rules.
+# 100 total rules per application load balancer
+# 5 condition values per rule
+# 5 wildcards per rule
+#
+# We chunk the inputs below create a rule for every 5 entries in the list.
+
 allowed_external_metrics_paths_https = [
   "/inc/*",
   "/dashboard/companies-house_files/*",

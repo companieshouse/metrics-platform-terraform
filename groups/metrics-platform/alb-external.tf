@@ -45,17 +45,18 @@ module "external_alb" {
     },
   ]
   https_listener_rules = concat(
-    length(var.allowed_external_metrics_paths_https) >= 1 ? [
+    # If we have paths to allow externally, create a new rule for each 5 entries in the list
+    length(var.allowed_external_metrics_paths_https) >= 1 ? [for paths in chunklist(var.allowed_external_metrics_paths_https, 5) :
       {
         # Allow specified paths to be forwarded to the target group
         https_listener_index = 0
-        priority             = 100
+        priority             = 100 + index(chunklist(var.allowed_external_metrics_paths_https, 5), paths)
         actions = [{
           type               = "forward"
           target_group_index = 0
         }]
         conditions = [{
-          path_patterns = var.allowed_external_metrics_paths_https
+          path_patterns = paths
         }]
     }] : [],
 

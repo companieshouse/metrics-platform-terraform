@@ -50,10 +50,10 @@ module "external_alb" {
         # Allow specified paths to be forwarded to the target group
         https_listener_index = 0
         priority             = 100
-        actions = {
+        actions = [{
           type               = "forward"
           target_group_index = 0
-        }
+        }]
         conditions = [{
           path_patterns = var.allowed_external_metrics_paths_https
         }]

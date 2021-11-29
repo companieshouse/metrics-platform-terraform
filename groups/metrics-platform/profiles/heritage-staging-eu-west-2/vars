@@ -69,4 +69,7 @@ web_cw_logs = {
 scheduled_stop_recurrence = "00 20 * * 1-5"
 scheduled_start_recurrence = "00 06 * * 1-5"
 
-allowed_external_metrics_paths_https = []
+allowed_external_metrics_paths_https = [
+  "/dashboard/paper-processing-dates.shtml",
+  "/dashboard/json/processedDates.json"
+]

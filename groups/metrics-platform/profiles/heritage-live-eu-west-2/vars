@@ -84,5 +84,6 @@ allowed_external_metrics_paths_https = [
   "/dashboard/static/*",
   "/dashboard/templates/*",
   "/dashboard/paper-processing-dates.shtml",
-  "/dashboard/json/processedDates.json"
+  "/dashboard/json/processedDates.json",
+  "/dashboard/assessments/*"
 ]

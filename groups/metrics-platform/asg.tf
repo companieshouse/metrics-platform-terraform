@@ -125,7 +125,7 @@ module "asg_alarms" {
 
   in_service_evaluation_periods      = "3"
   in_service_statistic_period        = "120"
-  expected_instances_in_service      = var.metrics_desired_capacity
+  expected_instances_in_service      = var.web_asg_desired_capacity
   in_pending_evaluation_periods      = "3"
   in_pending_statistic_period        = "120"
   in_standby_evaluation_periods      = "3"
@@ -134,7 +134,7 @@ module "asg_alarms" {
   in_terminating_statistic_period    = "120"
   total_instances_evaluation_periods = "3"
   total_instances_statistic_period   = "120"
-  total_instances_in_service         = var.metrics_desired_capacity
+  total_instances_in_service         = var.web_asg_desired_capacity
 
   actions_alarm = []
   actions_ok    = []

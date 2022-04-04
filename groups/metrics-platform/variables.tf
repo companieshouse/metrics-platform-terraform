@@ -182,7 +182,3 @@ variable "internal_lb_allow_cidr_blocks" {
   description = "List of CIDR blocks allowed access to web ports in the internal LB security group"
 }
 
-variable "metrics_desired_capacity" {
-  type        = number
-  description = "The desired capacity of ASG"
-}

@@ -112,7 +112,7 @@ module "external_alb_metrics" {
   alb_arn_suffix            = module.external_alb.lb_arn_suffix
   target_group_arn_suffixes = module.external_alb.target_group_arn_suffixes
 
-  prefix                    = "metrics-external-alb"
+  prefix                    = "metrics-external-"
   response_time_threshold   = "100"
   evaluation_periods        = "3"
   statistic_period          = "60"

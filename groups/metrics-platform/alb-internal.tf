@@ -109,7 +109,7 @@ module "internal_alb_metrics" {
   alb_arn_suffix            = module.internal_alb.lb_arn_suffix
   target_group_arn_suffixes = module.internal_alb.target_group_arn_suffixes
 
-  prefix                    = "metrics-internal-alb"
+  prefix                    = "metrics-internal-"
   response_time_threshold   = "100"
   evaluation_periods        = "3"
   statistic_period          = "60"

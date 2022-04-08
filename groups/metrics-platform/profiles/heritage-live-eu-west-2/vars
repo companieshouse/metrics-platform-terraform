@@ -11,6 +11,9 @@ region  = "euw2"
 application = "metrics"
 environment = "live"
 
+
+enable_sns_topic = "true"
+
 # Frontend ASG settings
 web_instance_size = "t3.medium"
 web_asg_min_size = 3

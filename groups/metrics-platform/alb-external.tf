@@ -19,7 +19,7 @@ module "external_alb_security_group" {
 #--------------------------------------------
 module "external_alb" {
   source  = "terraform-aws-modules/alb/aws"
-  version = "~> 6.2"
+  version = "~> 6.10.0"
 
   name                       = "alb-${var.application}-external-001"
   vpc_id                     = data.aws_vpc.vpc.id

@@ -31,7 +31,7 @@ resource "aws_route53_record" "internal_alb" {
 
 module "internal_alb" {
   source  = "terraform-aws-modules/alb/aws"
-  version = "~> 6.2"
+  version = "~> 6.10.0"
 
   name                       = "alb-${var.application}-internal-001"
   vpc_id                     = data.aws_vpc.vpc.id

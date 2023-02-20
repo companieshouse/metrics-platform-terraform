@@ -9,9 +9,10 @@ module "internal_alb_security_group" {
   description = "Security group for the ${var.application} internal load balancer"
   vpc_id      = data.aws_vpc.vpc.id
 
-  ingress_cidr_blocks = concat(var.internal_lb_allow_cidr_blocks, local.admin_cidrs)
-  ingress_rules       = ["http-80-tcp", "https-443-tcp"]
-  egress_rules        = ["all-all"]
+  ingress_cidr_blocks     = var.internal_lb_allow_cidr_blocks
+  ingress_prefix_list_ids = [data.aws_ec2_managed_prefix_list.administration.id]
+  ingress_rules           = ["http-80-tcp", "https-443-tcp"]
+  egress_rules            = ["all-all"]
 }
 
 #--------------------------------------------

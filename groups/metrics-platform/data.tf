@@ -66,7 +66,7 @@ data "aws_acm_certificate" "acm_cert" {
 # Web server data
 # ------------------------------------------------------------------------------
 data "aws_ami" "metrics" {
-  owners      = [data.vault_generic_secret.account_ids.data["development"]]
+  owners      = [data.vault_generic_secret.account_ids.data["shared-services"]]
   most_recent = true
 
   filter {
